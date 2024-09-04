@@ -50,41 +50,41 @@
         <Button x:Name="eightButton" Content="8"
             Margin="5"
             Grid.Row="2"
-            Grid.Column="1"/>
+            Grid.Column="1" Click="eightButtuon_Click"/>
         <Button x:Name="nineButton" Content="9"
             Margin="5"
             Grid.Row="2"
-            Grid.Column="2"/>
+            Grid.Column="2" Click="nineButton_Click"/>
         <Button x:Name="multiplicationButton" Content="*"
             Margin="5"
             Grid.Row="2"
             Grid.Column="3"/>
         <Button x:Name="fourButton" Content="4"
             Margin="5"
-            Grid.Row="3"/>
+            Grid.Row="3" Click="fourButton_Click"/>
         <Button x:Name="fiveButton" Content="5"
             Margin="5"
             Grid.Row="3"
-            Grid.Column="1"/>
+            Grid.Column="1" Click="fiveButton_Click"/>
         <Button x:Name="sixButton" Content="6"
             Margin="5"
             Grid.Row="3"
-            Grid.Column="2"/>
+            Grid.Column="2" Click="sixButton_Click"/>
         <Button x:Name="minusButton" Content="-"
             Margin="5"
             Grid.Row="3"
             Grid.Column="3"/>
         <Button x:Name="oneButton" Content="1"
             Margin="5"
-            Grid.Row="4"/>
+            Grid.Row="4" Click="oneButton_Click"/>
         <Button x:Name="twoButton" Content="2"
             Margin="5"
             Grid.Row="4"
-            Grid.Column="1"/>
+            Grid.Column="1" Click="twoButton_Click"/>
         <Button x:Name="threeButton" Content="3"
             Margin="5"
             Grid.Row="4"
-            Grid.Column="2"/>
+            Grid.Column="2" Click="threeButton_Click"/>
         <Button x:Name="plusButton" Content="+"
             Margin="5"
             Grid.Row="4"
@@ -92,7 +92,7 @@
         <Button x:Name="zeroButton" Content="0"
             Margin="5"
             Grid.Row="5"
-            Grid.ColumnSpan="2"/>
+            Grid.ColumnSpan="2" Click="zeroButton_Click"/>
         <Button x:Name="pointButton" Content="."
             Margin="5"
             Grid.Row="5"
