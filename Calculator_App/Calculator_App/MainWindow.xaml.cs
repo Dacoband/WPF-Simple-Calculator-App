@@ -17,6 +17,7 @@ namespace Calculator_App
     public partial class MainWindow : Window
     {
         double lastNumber, result;
+        SelectedOperation selectedOperation;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,9 +33,43 @@ namespace Calculator_App
 
         private void EqualButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            double newNumber;
+            if (double.TryParse(resultLable.Content.ToString(), out newNumber))
+            {
+                switch (selectedOperation) 
+                { 
+                    case SelectedOperation.Addition:
+                        result = SimpleMath.Add(lastNumber, newNumber);
+                        break;
+                    case SelectedOperation.Sustraction:
+                        result = SimpleMath.Sustraction(lastNumber, newNumber);
+                        break;
+                    case SelectedOperation.Multiplication:
+                        result = SimpleMath.Multiply(lastNumber, newNumber);
+                        break;
+                    case SelectedOperation.Division:
+                        result = SimpleMath.Divide(lastNumber, newNumber);
+                        break;
+
+                }
+
+                resultLable.Content = result.ToString();
+            }
         }
 
+        private void pointButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (resultLable.Content.ToString().Contains(" . "))
+            {
+                
+            }
+            else
+            {
+
+                resultLable.Content = $"{resultLable.Content}.";
+
+            }
+        }
         private void PercentageButton_Click(object sender, RoutedEventArgs e)
         {
             if (double.TryParse(resultLable.Content.ToString(), out lastNumber))
@@ -64,6 +99,14 @@ namespace Calculator_App
             {
                 resultLable.Content = "0";
             }
+            if(sender == multiplicationButton)
+                selectedOperation = SelectedOperation.Multiplication;
+            if(sender == divisionButton)
+                selectedOperation = SelectedOperation.Division;
+            if(sender == plusButton)
+                selectedOperation = SelectedOperation.Addition;
+            if(sender == minusButton)
+                selectedOperation = SelectedOperation.Sustraction;
         }
 
         private void numberButton_Click(object sender, RoutedEventArgs e)
@@ -79,4 +122,32 @@ namespace Calculator_App
             }
         }
     }
+
+    public enum SelectedOperation { 
+        Addition,
+        Sustraction,
+        Multiplication,
+        Division
+    }
+
+    public class SimpleMath 
+    {
+        public static double Add(double n1, double n2) 
+        { 
+            return n1 + n2;
+        }
+        public static double Sustraction(double n1, double n2)
+        {
+            return n1 - n2;
+        }
+        public static double Multiply(double n1, double n2)
+        {
+            return n1 * n2;
+        }
+        public static double Divide(double n1, double n2)
+        {
+            return n1 / n2;
+        }
+    }
+
 }
