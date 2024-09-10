@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:Calculator_App"
         mc:Ignorable="d"
         Title="MainWindow" Height="525" Width="570" Icon="/Screenshot 2023-09-12 024002.png" Cursor="Pen">
+
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="136*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="135.753"/>
             <ColumnDefinition Width="138*"/>
             <ColumnDefinition Width="138*"/>
             <ColumnDefinition Width="138*"/>
@@ -26,22 +27,26 @@
            HorizontalAlignment="Right"
            VerticalAlignment="Bottom"
            FontSize="60" Grid.Column="4" Margin="0,0,0,70" Grid.RowSpan="2"/>
-        <Button x:Name="acButton" 
+        <Button x:Name="acButton"
+                Foreground="Black"
                 Content="AC"
                 Margin="4,5,6,5"
                 Grid.Row="1" Grid.Column="1"/>
         <Button x:Name="negativeButton" 
+                Foreground="Black"
                 Content="+/1"
                 Margin="4,5,5,5"
                 Grid.Row="1"
                 Grid.Column="2"/>
-        <Button x:Name="percentageButton" Content="%"
+        <Button x:Name="percentageButton"
+                Content="%"
+                Foreground="Black"
             Margin="5,5,4,5"
             Grid.Row="1"
             Grid.Column="3"/>
         <Button x:Name="divisionButton" Content="/"
                 Click="OperationButton_Click"
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="DarkBlue"
                 Margin="6,5,5,5"
                 Grid.Row="1"
@@ -70,7 +75,7 @@
                 Grid.Column="3"
                 Click="numberButton_Click"/>
         <Button x:Name="multiplicationButton"
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="DarkBlue"
                 Content="*"
                 Click="OperationButton_Click"            
@@ -102,7 +107,7 @@
         <Button x:Name="minusButton" 
                 Content="-"
                 Click="OperationButton_Click"
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="DarkBlue"
                 Margin="6,5,5,5"
                 Grid.Row="3"
@@ -134,7 +139,7 @@
         <Button x:Name="plusButton"
                 Content="+"
                 Click="OperationButton_Click"
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="DarkBlue"
                 Margin="6,5,5,5"
                 Grid.Row="4"
@@ -158,7 +163,7 @@
                 Grid.Column="3"/>
         <Button x:Name="equalButton"
                 Content="="
-                Background="Orange"
+                Background="{StaticResource operatorColor}"
                 Foreground="DarkBlue"
                 Margin="6,5,5,5"
                 Grid.Row="5"
